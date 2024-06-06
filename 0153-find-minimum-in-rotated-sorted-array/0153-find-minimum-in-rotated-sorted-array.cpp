@@ -9,6 +9,13 @@ public:
         while (low <= high) {
             int mid = (low + high) / 2;
 
+            // if array is already sorted
+            if (nums[low] <= nums[high]) {
+                // keep the minimum:
+                ans = min(ans, nums[low]);
+                break;
+            }
+
             // if left part is sorted:
             if (nums[low] <= nums[mid]) {
                 // keep the minimum:
@@ -24,8 +31,7 @@ public:
                 // Eliminate right half:
                 high = mid - 1;
             }
-
         }
-                    return ans;
+        return ans;
     }
 };
