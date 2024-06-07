@@ -1,6 +1,14 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
+        // Using XOR :- TC O(n)
+        // int xor1 = 0;
+        // for(int i=0;i<nums.size();i++){
+        //     xor1=xor1 ^ nums[i];
+        //         } 
+
+        //         return xor1; 
+
         int low = 1; // we will start with 1st index because first index doesn't have left index
         int n = nums.size();
         int high = n - 2; // we will start with n-1th index because first index doesn't have right index
