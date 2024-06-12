@@ -13,13 +13,6 @@ int sumOfDivisor(vector<int>& nums,int Divisor){
     int smallestDivisor(vector<int>& nums, int threshold) {
         int n = nums.size();
 
-        int mini = INT_MAX;
-
-        // Find minimum element from the array  
-        for (int i = 0; i < n; i++) {
-            mini = min(mini, nums[i]); 
-        }
-
         int low= 1;
         int high=*max_element(nums.begin(),nums.end());
         int ans = -1;
