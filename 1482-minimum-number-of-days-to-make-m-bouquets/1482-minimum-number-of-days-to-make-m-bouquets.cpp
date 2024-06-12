@@ -7,7 +7,8 @@ public:
             if (v[i] <= day) { // if blooming day is less the the mid(given day)
                                // then increase the count
                 count++;
-                // if blooming day is greater then given day -m means flower is not bloom
+                // if blooming day is greater then given day -m means flower is
+                // not bloom
             } else { // otherwise chcek the number of Bouquet and make the count
                      // = 0 again
                 numsOfBouquet = numsOfBouquet + (count / k);
@@ -50,6 +51,27 @@ public:
             }
         }
 
-        return ans; // you can retunn low as well because low is always a answer
+        return ans; // you can retunn low as well because low is always answer
+
     }
+
+    // +++++++++++++ Brute Force Approch +++++++++++++
+
+    // int minDays(vector<int>& bloomDay, int m, int k) {
+
+    //     int n = bloomDay.size();
+    //     int mini = INT_MAX, maxi = INT_MIN;
+    //     for (int i = 0; i < n; i++) {
+    //         // for binary search range
+    //         mini = min(mini, bloomDay[i]);
+    //         maxi = max(maxi, bloomDay[i]);
+    //     }
+    //     for (int i = mini; i <= maxi; i++) {
+    //         if (possible(bloomDay, i, m, k)) {
+    //             return i;
+    //         }
+    //     }
+
+    //     return -1;
+    // }
 };
