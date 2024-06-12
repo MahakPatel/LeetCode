@@ -20,7 +20,7 @@ int sumOfDivisor(vector<int>& nums,int Divisor){
             mini = min(mini, nums[i]); 
         }
 
-        int low= mini;
+        int low= 1;
         int high=*max_element(nums.begin(),nums.end());
         int ans = -1;
 
