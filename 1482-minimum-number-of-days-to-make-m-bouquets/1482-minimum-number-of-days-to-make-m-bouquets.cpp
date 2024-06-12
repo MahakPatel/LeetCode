@@ -20,7 +20,7 @@ public:
                                    // to require Bouquet then return true
     }
     int minDays(vector<int>& bloomDay, int m, int k) {
-        long long val = m * 1LL * k * 1LL;
+        long long val = m * 1LL * k * 1LL; // convert int int long long type
         int n = bloomDay.size();
 
         if (val > n) {
