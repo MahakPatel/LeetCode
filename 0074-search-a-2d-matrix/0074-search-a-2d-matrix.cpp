@@ -7,7 +7,7 @@ public:
         int n = matrix.size();
         int m = matrix[0].size();
 
-        int high =(n*m -1);
+        int high =(n*m-1);
 
         while(low <= high){
             int mid = (low+high)/2;
