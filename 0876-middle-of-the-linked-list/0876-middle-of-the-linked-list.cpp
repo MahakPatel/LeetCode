@@ -12,6 +12,30 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
 
+        // TC O(N + N/2).  SC O(1)
+        // //++++++++++++ Brute Force Approch ++++++++++++++++++
+        // ListNode* temp = head;
+        // int count = 0;
+
+        // while (temp) {
+        //     count++;
+        //     temp = temp->next;
+        // }
+
+        // int midPoint = (count / 2) + 1;
+
+        // cout << midPoint;
+
+        // while (temp != NULL) {
+        //     midPoint = midPoint - 1;
+
+        //     if (midPoint == 0)
+        //         break;
+
+        //     temp = temp->next;
+        // }
+
+        // return temp;
 
         // +++++++++++++++ TortoiseHare Method ++++++++++++
         ListNode* fast = head; // move 2 node at a time
@@ -25,6 +49,6 @@ public:
         // if fast reach to last node(for odd numbers of nodes in LL)
         // if fast reach to NULL (for even numbers of nodes in LL)
 
-        return slow; // once above condition satisfied slow pointer always at mid of LL   
+        return slow; // once above condition satisfied slow pointer always at mid of LL
     }
 };
