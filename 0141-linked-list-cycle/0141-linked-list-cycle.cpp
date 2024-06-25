@@ -9,9 +9,26 @@
 class Solution {
 public:
     bool hasCycle(ListNode* head) {
-        
 
-        //++++ Optimal Solution [TortoiseHare Method] ++++++++++
+        // ++++++++++ Brute Force Approch ++++++++++++
+
+        // map<ListNode*,int> mpp; // craete Map 
+        // ListNode* temp = head;
+
+        // while(temp != NULL){
+        //     if(mpp.find(temp) != mpp.end()){ // check if Node is already present in map or not
+        //         return true; // if present return true
+        //     }
+
+        //     mpp[temp] = 1; // else put the Node into map
+        //     temp = temp -> next; 
+        // }
+
+        // return false;
+
+
+        // ++++ Optimal Solution [TortoiseHare Method] ++++++++++
+        
         ListNode* slow = head; // move by 1 node everytime
         ListNode* fast = head;// move by 2 node everytime
 
