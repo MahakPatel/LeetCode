@@ -59,28 +59,28 @@ public:
 
         //
         // ++++++++ Optimal solution +++++++++++++
-        // ListNode* temp = head; // current node
-        // ListNode* back = NULL; // previous node of current node
+        ListNode* temp = head; // current node
+        ListNode* back = NULL; // previous node of current node
 
-        // while (temp != NULL) {
-        //     ListNode* front = temp->next; // next node of current node
-        //     temp->next = back;
-        //     back = temp;
-        //     temp = front;
-        // }
+        while (temp != NULL) {
+            ListNode* front = temp->next; // next node of current node
+            temp->next = back;
+            back = temp;
+            temp = front;
+        }
 
-        // return back;
+        return back;
 
            // +++++++++++++ Recursive Approch ++++++++++++
 
-    if (head == NULL || head -> next == NULL) return head;
+    // if (head == NULL || head -> next == NULL) return head;
 
-    ListNode* newHead = reverseList(head -> next);
-    ListNode* front = head -> next;
-    front -> next = head;
-    head -> next = NULL;
+    // ListNode* newHead = reverseList(head -> next);
+    // ListNode* front = head -> next;
+    // front -> next = head;
+    // head -> next = NULL;
 
-    return newHead;
+    // return newHead;
 
 
     }
