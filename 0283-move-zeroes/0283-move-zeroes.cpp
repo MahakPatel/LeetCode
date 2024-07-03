@@ -2,14 +2,14 @@ class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
 
-        // Optimal Approch
+        // Optimal Approch // two index approch
 
         int j = 0;
 
         for(int i =0;i<nums.size();i++){
-            if(nums[i]!=0){
-                swap(nums[i], nums[j]);
-                j++;
+            if(nums[i]!=0){  // check for no 0 
+                swap(nums[i], nums[j]); // if element is not 0 then swap 
+                j++; // and increase the second pointer
             }
         }
 
