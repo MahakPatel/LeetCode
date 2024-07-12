@@ -12,6 +12,7 @@
  */
 class Solution {
 public:
+    // +++++++++++++++++ Recursive Method ++++++++++++++++++++
     void solve(TreeNode* root, vector<int>& ans) {
         if (root == NULL) { // if root equal to zero return
             return;
@@ -27,4 +28,28 @@ public:
         solve(root, ans);
         return ans;
     }
+
+    // // +++++++++++++ Iterative Method +++++++++++++++++++++
+    // vector<int> inorderTraversal(TreeNode* root) {
+    //     stack<TreeNode*> st; // create empty stack
+    //     vector<int> inOrder; // for storing ans
+
+    //     TreeNode* node = root; // craete node and assign to root
+
+    //     while (true) {
+    //         if (node != NULL) { // if node is not null
+    //             st.push(node); // push that node into stack
+    //             node = node->left; // and move left
+    //         }else{
+    //             if(st.empty()) break; // if stack empty break while loop and
+    //             return node = st.top(); // get top node of the stack
+    //             st.pop(); // pop out that niode
+    //             inOrder.push_back(node->val); // push the value of that node
+    //             node=node->right; // move right
+
+    //         }
+    //     }
+
+    //     return inOrder;
+    // }
 };
