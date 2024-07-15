@@ -12,7 +12,7 @@
  */
 class Solution {
 public:
-//++++++++++++++++ Recursive Method ++++++++++++++++++++++
+    //++++++++++++++++ Recursive Method ++++++++++++++++++++++
     void solve(TreeNode* root, vector<int>& ans) {
         if (root == NULL) { // if root equal to zero return
             return;
@@ -29,29 +29,65 @@ public:
         return ans;
     }
 
-    //+++++++++++++++ Iterative Method +++++++++++++++
+    //+++++++++++++++ Iterative Method Using 2 stack +++++++++++++++
 
-    // vector<int> postorderTraversal(TreeNode* root) {
-    //     vector<int> postOrder; // for storing ans
-    //     stack<TreeNode*> st1,st2; // craete 2 empty stack
-    //     if(root == NULL) return postOrder;
+  //  vector<int> postorderTraversal(TreeNode* root) {
+        //     vector<int> postOrder; // for storing ans
+        //     stack<TreeNode*> st1,st2; // craete 2 empty stack
+        //     if(root == NULL) return postOrder;
 
-    //     st1.push(root); // push root node in stack 1
+        //     st1.push(root); // push root node in stack 1
 
-    //     while(!st1.empty()){
-    //         root = st1.top(); // get the top of the stack
-    //         st1.pop();
-    //         st2.push(root); // and push into st2
- 
-    //         if(root -> left != NULL) st1.push(root->left); // if left node is present then push into st1
-    //         if(root -> right != NULL) st1.push(root->right);// if right node is present then push into st1
-    //     }
+        //     while(!st1.empty()){
+        //         root = st1.top(); // get the top of the stack
+        //         st1.pop();
+        //         st2.push(root); // and push into st2
 
-    //     while(!st2.empty()){ // run till st2 become empty
-    //         postOrder.push_back(st2.top()->val); // push stack 2 top into postOrder
-    //         st2.pop(); // and pop out that node
-    //     }
+        //         if(root -> left != NULL) st1.push(root->left); // if left
+        //         node is present then push into st1 if(root -> right != NULL)
+        //         st1.push(root->right);// if right node is present then push
+        //         into st1
+        //     }
 
-    //     return postOrder;
-    // }
+        //     while(!st2.empty()){ // run till st2 become empty
+        //         postOrder.push_back(st2.top()->val); // push stack 2 top into
+        //         postOrder st2.pop(); // and pop out that node
+        //     }
+
+        //     return postOrder;
+        // }
+
+            //+++++++++++++++ Iterative Method Using 1 stack +++++++++++++++
+
+//  vector<int> postorderTraversal(TreeNode* root) {
+//     vector<int> postOrder;
+//     if (!root) return postOrder;
+
+//     stack<TreeNode*> st1;
+//     TreeNode* cur = root;
+
+//     while (cur != nullptr || !st1.empty()) {
+//         if (cur != nullptr) {
+//             st1.push(cur);
+//             cur = cur->left;
+//         } else {
+//             TreeNode* temp = st1.top()->right;
+//             if (temp == nullptr) {
+//                 temp = st1.top();
+//                 st1.pop();
+//                 postOrder.push_back(temp->val);
+//                 while (!st1.empty() && temp == st1.top()->right) {
+//                     temp = st1.top();
+//                     st1.pop();
+//                     postOrder.push_back(temp->val);
+//                 }
+//             } else {
+//                 cur = temp;
+//             }
+//         }
+//     }
+
+//     return postOrder;
+// }
+
 };
