@@ -1,5 +1,23 @@
 class Solution {
 public:
+
+//+++++++++++++++ Recursive Approch ++++++++++++++
+    // bool recursiveCheckValidString(string s,int index,int count){
+    //     if(count < 0) return false;
+
+    //     if(index == s.length()) return (count == 0);
+
+    //     if(s[index] == '(') { // if '(' increase count by 1
+    //     return recursiveCheckValidString(s,index+1,count+1);
+    //     }
+    //     if(s[index] == ')'){ // ')' decrease count by 1
+    //         return recursiveCheckValidString(s,index+1,count-1);
+    //     }
+            // if '*' then for '(' increase count by 1 or if ')' decrease count by 1 or if ' ' then just count ( or condition of all 3 calls)
+    //     return (recursiveCheckValidString(s,index+1,count+1) or 
+    //     recursiveCheckValidString(s,index+1,count-1) or 
+    //     recursiveCheckValidString(s,index+1,count));
+    // }
     bool checkValidString(string s) {
         int min = 0, max = 0; // for to maintain range
  
