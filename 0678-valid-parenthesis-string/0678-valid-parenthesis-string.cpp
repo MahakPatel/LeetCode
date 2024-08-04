@@ -18,6 +18,8 @@ public:
     //     recursiveCheckValidString(s,index+1,count-1) or 
     //     recursiveCheckValidString(s,index+1,count));
     // }
+
+    // ++++++++++++ Iteratrive ++++++++++++++++
     bool checkValidString(string s) {
         int min = 0, max = 0; // for to maintain range
  
