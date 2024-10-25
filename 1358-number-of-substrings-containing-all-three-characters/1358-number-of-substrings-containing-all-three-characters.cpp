@@ -22,6 +22,8 @@ public:
 
     //     return count; // Return the total count of valid substrings
     // }
+
+    // ++++++++++++++++++ Optimal Solution +++++++++++++++++++++
     int numberOfSubstrings(string s) {
         int n = s.length(); // Length of the input string
         int lastSeen[3] = {-1, -1, -1}; // Array to store the last seen indices of 'a', 'b', and 'c'
