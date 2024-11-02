@@ -6,7 +6,7 @@ public:
         // Build the adjacency list based on prerequisites
         for (auto it : prerequisites) {
             // Since it.first depends on it.second, we add it.second to the adjacency list of it.first
-            adj[it[1]].push_back(it[0]);
+            adj[it[0]].push_back(it[1]);
         }
 
         vector<int> indegree(v, 0); // Initialize indegree array to 0 for all vertices
