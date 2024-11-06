@@ -3,8 +3,7 @@ public:
     int mod = 1e9 + 7; // Modulo value for large number handling
 
     int countPaths(int n, vector<vector<int>>& roads) {
-        vector<vector<pair<int, int>>> adj(
-            n); // Correct declaration for adjacency list
+        vector<vector<pair<int, int>>> adj(n); // Correct declaration for adjacency list
 
         // Constructing the adjacency list
         for (auto it : roads) {
