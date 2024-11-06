@@ -40,13 +40,11 @@ public:
                 }
                 // If the same distance is found again
                 else if (dis + ewt == dist[adjNode]) {
-                    ways[adjNode] = (ways[adjNode] + ways[node]) %
-                                    mod; // Update the number of ways
+                    ways[adjNode] = (ways[adjNode] + ways[node]) % mod; // Update the number of ways
                 }
             }
         }
 
-        return ways[n - 1] %
-               mod; // Return the number of ways to reach the destination
+        return ways[n - 1] % mod; // Return the number of ways to reach the destination
     }
 };
