@@ -1,6 +1,6 @@
 class Solution {
 public:
- int maxMoney(const std::vector<int>& nums) {
+    int maxMoney(const std::vector<int>& nums) {
         int n = nums.size();
 
         // Edge case: no houses
@@ -37,19 +37,22 @@ public:
         return prev;
     }
     int rob(vector<int>& nums) {
-        vector<int> temp1,temp2;
+        vector<int> temp1, temp2;
 
         int n = nums.size();
 
-        if(n == 1) return nums[0];
+        if (n == 1)
+            return nums[0];
 
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             // Case 1: Exclude the last house
-            if(i!=0) temp1.push_back(nums[i]);
+            if (i != 0)
+                temp1.push_back(nums[i]);
             // Case 2: Exclude the first house
-            if(i!=n-1) temp2.push_back(nums[i]);
+            if (i != n - 1)
+                temp2.push_back(nums[i]);
         }
 
-        return max(maxMoney(temp1),maxMoney(temp2));
+        return max(maxMoney(temp1), maxMoney(temp2));
     }
 };
