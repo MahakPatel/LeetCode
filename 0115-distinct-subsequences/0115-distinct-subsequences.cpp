@@ -94,7 +94,9 @@ public:
     //     }
     //     return dp[n][m];
     // }
-
+    // // // ++++++++++++ space optimization Approach ++++++++++++++++
+    // // // Time Complexity: O(n *m)
+    // // // Space Complexity: O(n))
     int numDistinct(string s, string t) {
         int n = s.length(), m = t.length();
         vector<double> prev(m + 1, 0),
