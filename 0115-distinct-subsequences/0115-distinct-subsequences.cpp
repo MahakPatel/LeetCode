@@ -97,7 +97,7 @@ public:
 
     int numDistinct(string s, string t) {
         int n = s.length(), m = t.length();
-        vector<long long> prev(m + 1, 0),
+        vector<double> prev(m + 1, 0),
             cur(m + 1, 0); // Use long long to prevent overflow
 
         // Base case: An empty `t` is always a subsequence of any prefix of `s`
@@ -119,6 +119,6 @@ public:
             prev = cur; // Move current row to previous for the next iteration
         }
 
-        return static_cast<int>(prev[m]); // Cast result back to int
+        return int(prev[m]); // Cast result back to int
     }
 };
