@@ -199,8 +199,8 @@ public:
         // Create dp tables for storing results:
         // `after` stores the results for the next day (future states)
         // `cur` stores the results for the current day
-        vector<vector<int>> after(2, vector<int>(3, -1));
-        vector<vector<int>> cur(2, vector<int>(3, -1));
+        vector<vector<int>> after(2, vector<int>(3,0));
+        vector<vector<int>> cur(2, vector<int>(3, 0));
 
         // Fill the dp table in reverse order (from the last day to the first)
         for (int i = n - 1; i >= 0; i--) {
