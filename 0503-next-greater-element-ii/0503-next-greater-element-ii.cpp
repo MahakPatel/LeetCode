@@ -25,7 +25,7 @@ public:
     //     return nge;
     // }
     // ++++++++++++ Using Stack ++++++++++++
-    // TC O(2n)
+    // TC O(4n)
     // SC O(2n)
     vector<int> nextGreaterElements(vector<int>& nums) {
         int n = nums.size();
