@@ -1,6 +1,6 @@
 class Solution {
 public:
-    // ++++++++++++ Longest Increasing Subsequence ++++++++++++
+    // ++++++++++++ Using Longest Increasing Subsequence ++++++++++++
     // TC O(n^2)
     // SC O(n)
     int findNumberOfLIS(vector<int>& arr) {
