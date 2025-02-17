@@ -50,32 +50,35 @@ public:
     //     return maxi; // Return the largest product found
     // }
 
-
     // ++++++++++++++++++ Optimal Solution +++++++++++++++++
     // TC O(N)
     // SC O(1)
     int maxProduct(vector<int>& nums) {
         int n = nums.size();
 
-        int maxi = INT_MIN; // Stores the maximum product found so far
-        int product = 1;    // Stores the product of the current subarray
+        int pre = 1, suff = 1; // Prefix and Suffix product trackers
+        int maxi = INT_MIN;    // Stores the maximum product found so far
 
-        // Traverse the array to compute the maximum product subarray
+        // Iterate through the array while maintaining both prefix and suffix
+        // products
         for (int i = 0; i < n; i++) {
-            product =
-                product * nums[i]; // Multiply current element with the product
 
-            maxi =
-                max(maxi, product); // Update the maximum product found so far
+            // Reset prefix and suffix products to 1 when encountering zero
+            if (pre == 0)
+                pre = 1;
+            if (suff == 0)
+                suff = 1;
 
-            // Reset product to 1 if it becomes negative
-            // This is incorrect in some cases, as negative numbers might lead
-            // to larger products later
-            if (product < 0) {
-                product = 1;
-            }
+            // Compute prefix product from left to right
+            pre = pre * nums[i];
+
+            // Compute suffix product from right to left
+            suff = suff * nums[n - i - 1];
+
+            // Update the global maximum product using both prefix and suffix
+            maxi = max(maxi, max(pre, suff));
         }
 
-        return maxi; // Return the maximum product found
+        return maxi; // Return the maximum product subarray
     }
 };
