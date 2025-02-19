@@ -15,6 +15,22 @@ public:
 
     //     return false;
     // }
+    // ++++++++++++++ Better Solution ++++++++++++
+    // TC O(N^2)
+    // SC O(1)
+    // bool containsDuplicate(vector<int>& nums) {
+    //     unordered_set<int> seen; // Set to store unique elements
+
+    //     for (int num : nums) {
+    //         if (seen.find(num) !=
+    //             seen.end()) { // If num is already in the set, it's a duplicate
+    //             return true;
+    //         }
+    //         seen.insert(num); // Insert num into the set
+    //     }
+
+    //     return false; // No duplicates found
+    // }
 
     // ++++++++++++++ Optimal Solution ++++++++++++
     // TC O(N * nlogn)
