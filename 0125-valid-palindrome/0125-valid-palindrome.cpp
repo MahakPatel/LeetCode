@@ -29,20 +29,25 @@ public:
         int left = 0, right = s.length() - 1;
 
         while (left < right) {
-        if(!isalnum(s[left])){
+            // Skip non-alphanumeric characters from the left
+            if (!isalnum(s[left])) {
                 left++;
-        }
-        else if (!isalnum(s[right])){
+            }
+            // Skip non-alphanumeric characters from the right
+            else if (!isalnum(s[right])) {
                 right--;
-        }        
-        else if( tolower(s[left]) != tolower(s[right]) ){
+            }
+            // If characters don't match (ignoring case), it's not a palindrome
+            else if (tolower(s[left]) != tolower(s[right])) {
                 return false;
+            }
+            // If they match, move both pointers inward
+            else {
+                left++;
+                right--;
+            }
         }
-        else{
-                ++left;
-                --right;
-        }
-    }
-        return true;
+
+        return true; // If loop completes, it's a palindrome
     }
 };
