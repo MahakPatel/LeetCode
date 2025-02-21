@@ -69,7 +69,7 @@ public:
             ListNode* fast = head;
             ListNode* slow = head;
 
-            while (fast->next != NULL && fast->next->next != NULL) { // movefast till last node (for old length of LL) or second last node(if even length of LL)
+            while (fast->next != NULL && fast->next->next != NULL) { // movefast till last node (for odd length of LL) or second last node(if even length of LL)
                 fast = fast->next->next;
                 slow = slow->next; // will reach at middle of LL
             }
