@@ -10,7 +10,7 @@ class Solution {
 public:
     // ++++++++++++ Optimal Solution+++++++++
     // TC O(1)
-    // SC O(!)
+    // SC O(1)
     void deleteNode(ListNode* node) {
         node -> val = node -> next -> val;
         node -> next = node -> next -> next;
