@@ -19,8 +19,7 @@ public:
             fast = fast->next;
         }
 
-        if (fast ==
-            NULL) { // if n= length of LL then return second node as newHead
+        if (fast == NULL) { // if n= length of LL then return second node as newHead
             ListNode* newHead = head->next;
             delete (head);
             return newHead;
