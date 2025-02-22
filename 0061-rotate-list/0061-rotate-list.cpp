@@ -9,48 +9,50 @@
  * };
  */
 class Solution {
-
-   ListNode* newNthNode(ListNode* temp,int k){
-    int count = 1; // start with 1
-
-    while(temp != NULL){
-        if(count == k){ // if count match with k then you reach to length - k node
-            return temp;
-        }
-
-        count++; // count the node which require to reach last node
-        temp = temp -> next; // move temp 
-    }
-
-    return temp;
-   }
 public:
+    // +++++++++++++++++ Optimal Solution ++++++++++++++
+    // TC O(n)
+    // SC O(1)
     ListNode* rotateRight(ListNode* head, int k) {
+        // Base case: If the list is empty, has only one node, or no rotation
+        // needed (k == 0)
+        if (head == NULL || head->next == NULL || k == 0)
+            return head;
 
-        if(head == NULL || k == 0) return head; // base case
-        ListNode* tail = head; // to reach last node
-        ListNode* temp = head; // for travelsal
+        ListNode* cur = head;
+        int len =
+            1; // Initialize length of the list as 1 (since we start at head)
 
-        int length = 1; // start with 1 because count head node
-
-        while(tail -> next!= NULL){ 
-            length++; // find length of LL
-            tail = tail -> next; // move tail to last node
+        // Traverse the list to calculate its length and find the last node
+        while (cur->next != NULL) {
+            len++;           // Increment the length
+            cur = cur->next; // Move to the next node
         }
 
-        if(k % length == 0) return head; // if(k is multiple of length of LL then rotation will be not there and return same LL EX 10 % 5 == 0 so no need to rotate)
+        // If k is equal to the list length, no rotation is needed
+        if (k == len)
+            return head;
 
-        k = k % length; // if k is not the maltiple of length the assign the value of k (10 % 4 == 2)
+        // Connect the last node to the head to form a circular linked list
+        cur->next = head;
 
-        tail -> next = head;  // tail next(last node) point to head
+        // Reduce k to within the bounds of the list length
+        k = k % len;
 
-       ListNode* newLastNode = newNthNode(head,length - k); // will get last node after rotation
+        // Calculate the number of steps to the new tail (len - k)
+        k = len - k;
 
-       head = newLastNode -> next; // new head will be the lastLastNode of next
-       newLastNode -> next = NULL; // last node next point to NULL
+        // Traverse to the new tail (len - k steps from the head)
+        while (k--)
+            cur = cur->next;
 
+        // Set the new head to the next node of the new tail
+        head = cur->next;
+
+        // Break the circular link by setting the new tail's next to NULL
+        cur->next = NULL;
+
+        // Return the new head after rotation
         return head;
-
-        
     }
 };
