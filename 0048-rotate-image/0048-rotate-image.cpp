@@ -14,7 +14,8 @@ public:
     // }
 
     // +++++++++++++++ Optimal Solution ++++++++++++++++
-    
+    // TC O(n)
+    // SC O(1)
     int n = matrix.size(); // Get the size of the matrix (n x n)
 
     // Step 1: Transpose the matrix (convert rows to columns)
