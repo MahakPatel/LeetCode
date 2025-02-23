@@ -3,6 +3,8 @@ public:
     int majorityElement(vector<int>& nums) {
         // +++++++++++++++ Optimal Solution +++++++++++++
         // +++++++++++++++ Moore's Voting Algorithm ++++++++++++++++++++++
+        // TC 0(2N)
+        // SC O(1)
 
         int n = nums.size();
 
@@ -43,6 +45,8 @@ public:
     }
 
     // +++++++++++++++++ Brute Force +++++++++++++++
+    // TC 0(n^2)
+    // SC O(1)
     //     int n = nums.size();
     //     for (int i = 0; i < n; i++) {
     //         int count = 0;
@@ -61,6 +65,8 @@ public:
     // }
 
     // +++++++++++++++ Better Solution+++++++++++++++++++
+    // TC 0(n)
+    // SC O(N)
     //     map<int,int> mpp;
 
     //     for(int i=0;i<nums.size();i++){
