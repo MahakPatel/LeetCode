@@ -11,7 +11,7 @@ public:
         int maxProfit = 0; // Initialize maxProfit to 0
 
         // Traverse through the prices array
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             // Calculate the potential profit if selling at the current price
             int profitIfSoldToday = prices[i] - mini;
 
