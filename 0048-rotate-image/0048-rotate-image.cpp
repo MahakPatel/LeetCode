@@ -1,6 +1,20 @@
 class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
+
+    // ++++++++++++++ Brute Force +++++++++++++++
+    // int n = matrix.size(); // Get the size of the matrix (n x n)
+
+    // int ans[n][n];
+
+    // for(int i=0;i<n;i++){
+    //     for(int j=0;j<n;j++){
+    //         ans[i][j] = matrix[j][n-1-i];
+    //     }
+    // }
+
+    // +++++++++++++++ Optimal Solution ++++++++++++++++
+    
     int n = matrix.size(); // Get the size of the matrix (n x n)
 
     // Step 1: Transpose the matrix (convert rows to columns)
