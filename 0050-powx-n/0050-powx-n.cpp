@@ -26,7 +26,7 @@ public:
             if (nn < 0) // is n value is negative then convert into positive
                 nn = -1 * nn;
             while (nn) { // run till nn value become invalid(0)
-                if (nn % 2) { // if (modulo 2 is 0)
+                if (nn % 2 == 1) { // if (modulo 2 is 1)
                     ans = ans * x; // mul ans with value
                     nn = nn - 1; // ans reduce power by 1
                 } else { // otherwise
