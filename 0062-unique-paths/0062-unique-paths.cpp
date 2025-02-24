@@ -109,54 +109,77 @@ public:
     //     return dp[m - 1][n - 1];
     // }
 
+    // // +++++++++++++++ Space Optimazation
+    // ++++++++++++++++++++++++++++++++++++
 
-    // +++++++++++++++ Space Optimazation ++++++++++++++++++++++++++++++++++++
+    // int uniquePaths(int m, int n) {
+    //     // Create a 1D dp array to store the number of paths to each cell in
+    //     the
+    //     // current row
+    //     vector<int> prev(n, 0);
 
+    //     // Loop through the rows of the grid
+    //     for (int i = 0; i < m; i++) {
+    //         // Create a new 1D array to store the current row's path values
+    //         vector<int> cur(n, 0);
+
+    //         // Loop through the columns of the grid
+    //         for (int j = 0; j < n; j++) {
+    //             // Base case: If we are at the top-left corner, there's only
+    //             one
+    //             // way to reach it (stay in place)
+    //             if (i == 0 && j == 0) {
+    //                 cur[j] = 1;
+    //             } else {
+    //                 int up = 0;   // Number of ways coming from the top
+    //                 int left = 0; // Number of ways coming from the left
+
+    //                 // If we're not in the first row, add the number of ways
+    //                 // from the top
+    //                 if (i > 0) {
+    //                     up = prev[j];
+    //                 }
+
+    //                 // If we're not in the first column, add the number of
+    //                 ways
+    //                 // from the left
+    //                 if (j > 0) {
+    //                     left = cur[j - 1];
+    //                 }
+
+    //                 // The current number of paths is the sum of the ways
+    //                 from
+    //                 // top and left
+    //                 cur[j] = up + left;
+    //             }
+    //         }
+
+    //         // Move the current row's result to the previous row for the next
+    //         // iteration
+    //         prev = cur;
+    //     }
+
+    //     // The result is stored in the last cell of the last row
+    //     (bottom-right
+    //     // corner)
+    //     return prev[n - 1];
+    // }
+
+    // ++++++++++++++ Using NcR formula
+    // TC O(n-1)
+    // SC O(1)
     int uniquePaths(int m, int n) {
-        // Create a 1D dp array to store the number of paths to each cell in the
-        // current row
-        vector<int> prev(n, 0);
+        int N = m + n - 2; // Total moves needed
+        int r = m - 1;     // Choosing 'm-1' downward moves
 
-        // Loop through the rows of the grid
-        for (int i = 0; i < m; i++) {
-            // Create a new 1D array to store the current row's path values
-            vector<int> cur(n, 0);
+        double ans =
+            1; // Store result as double to avoid integer division issues
 
-            // Loop through the columns of the grid
-            for (int j = 0; j < n; j++) {
-                // Base case: If we are at the top-left corner, there's only one
-                // way to reach it (stay in place)
-                if (i == 0 && j == 0) {
-                    cur[j] = 1;
-                } else {
-                    int up = 0;   // Number of ways coming from the top
-                    int left = 0; // Number of ways coming from the left
-
-                    // If we're not in the first row, add the number of ways
-                    // from the top
-                    if (i > 0) {
-                        up = prev[j];
-                    }
-
-                    // If we're not in the first column, add the number of ways
-                    // from the left
-                    if (j > 0) {
-                        left = cur[j - 1];
-                    }
-
-                    // The current number of paths is the sum of the ways from
-                    // top and left
-                    cur[j] = up + left;
-                }
-            }
-
-            // Move the current row's result to the previous row for the next
-            // iteration
-            prev = cur;
+        // Compute nCr using iterative multiplication to prevent overflow
+        for (int i = 1; i <= r; i++) {
+            ans = ans * (N - r + i) / i;
         }
 
-        // The result is stored in the last cell of the last row (bottom-right
-        // corner)
-        return prev[n - 1];
+        return (int)ans; // Convert back to integer
     }
 };
