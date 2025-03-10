@@ -1,6 +1,8 @@
 #include <iostream>
 class MinStack {
 
+    // +++++++++++++++ Using pair value of stack element stack(value , minimum valu)+++++++++
+
     stack < pair < int, int >> st;
 
   public:
@@ -26,7 +28,8 @@ class MinStack {
     return st.top().second;
   }
 
-  
+// +++++++++++++ Using single value of stack ++++++++++++
+
 //     stack<long long> st;
 //     long mini;
 // public:
