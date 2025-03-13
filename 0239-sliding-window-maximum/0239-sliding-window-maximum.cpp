@@ -20,7 +20,9 @@ public:
 
     //     return ans;
     // }
-
+    // +++++++++++ Optimal Solution +++++++++++++++++
+    // TC O(2n)
+    // SC O(k) + O(n-k)
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         vector<int> ans;
         deque<int> dq; // Stores indices of useful elements
