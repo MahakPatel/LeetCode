@@ -16,8 +16,8 @@ public:
     //     return false;
     // }
     // ++++++++++++++ Better Solution ++++++++++++
-    // TC O(N^2)
-    // SC O(1)
+    // TC O(N)
+    // SC O(n)
     // bool containsDuplicate(vector<int>& nums) {
     //     unordered_set<int> seen; // Set to store unique elements
 
@@ -33,7 +33,7 @@ public:
     // }
 
     // ++++++++++++++ Optimal Solution ++++++++++++
-    // TC O(N * nlogn)
+    // TC O(N + nlogn)
     // SC O(1)
     bool containsDuplicate(vector<int>& nums) {
         int n = nums.size();
