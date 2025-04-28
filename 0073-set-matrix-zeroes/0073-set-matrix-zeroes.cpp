@@ -1,24 +1,5 @@
 class Solution {
 public:
-    // void markRow(vector<vector<int>>& matrix, int i, int m) {
-    //     // Mark the entire row i as needing to be zeroed
-    //     for (int j = 0; j < m; j++) {
-    //         if (matrix[i][j] != 0) {
-    //             matrix[i][j] = -1; // Use -1 as a marker to indicate the cell
-    //                                // needs to be zeroed
-    //         }
-    //     }
-    // }
-
-    // void markColumn(vector<vector<int>>& matrix, int j, int n) {
-    //     // Mark the entire column j as needing to be zeroed
-    //     for (int i = 0; i < n; i++) {
-    //         if (matrix[i][j] != 0) {
-    //             matrix[i][j] = -1; // Use -1 as a marker to indicate the cell
-    //                                // needs to be zeroed
-    //         }
-    //     }
-    // }
     void setZeroes(vector<vector<int>>& matrix) {
 
         // +++++++++++++++++++ Optimal Solution ++++++++++++++++++++
@@ -70,55 +51,4 @@ public:
             }
         }
     }
-
-    // +++++++++++++++++ Better Solution ++++++++++++++++++++++
-
-    //     // Create vectors to track which rows and columns need to be
-    //     zeroed vector<int> row(n,0); // Vector to mark rows with zeros;
-    //     initialized to 0 vector<int> col(m, 0); // Vector to mark columns
-    //     with zeros; initialized to 0
-
-    //     // Traverse the matrix to identify rows and columns that contain
-    //     zeros for (int i = 0; i < n; i++) {
-    //         for (int j = 0; j < m; j++) {
-    //             if (matrix[i][j] == 0) {
-    //                 row[i] = 1; // Mark the row index i as needing to be
-    //                 zeroed col[j] = 1; // Mark the column index j as
-    //                 needing to be zeroed
-    //             }
-    //         }
-    //     }
-
-    //     // Traverse the matrix again to set the appropriate cells to zero
-    //     for (int i = 0; i < n; i++) {
-    //         for (int j = 0; j < m; j++) {
-    //             if (row[i] || col[j]) { // Check if either the row or
-    //             column is marked
-    //                 matrix[i][j] = 0; // Set the cell to zero
-    //             }
-    //         }
-    //     }
-    // }
-
-    // ++++++++++++++++ Brute Force +++++++++++++++++
-
-    //     // First pass: Mark rows and columns that need to be zeroed
-    //     for (int i = 0; i < n; i++) {
-    //         for (int j = 0; j < m; j++) {
-    //             if (matrix[i][j] == 0) {
-    //                 markRow(matrix, i, m);    // Mark the entire row i
-    //                 markColumn(matrix, j, n); // Mark the entire column j
-    //             }
-    //         }
-    //     }
-
-    //     // Second pass: Set the marked cells to zero
-    //     for (int i = 0; i < n; i++) {
-    //         for (int j = 0; j < m; j++) {
-    //             if (matrix[i][j] == -1) {
-    //                 matrix[i][j] = 0; // Set the marked cells to zero
-    //             }
-    //         }
-    //     }
-    // }
 };
