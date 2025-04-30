@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    TreeNode* searchBST(TreeNode* root, int val) {
+TreeNode* searchBST(TreeNode* root, int val) {
         while(root != NULL && val != root->val){ // run till root is not NULL and val not found
             root = val<root->val ? root->left : root->right; // if value is less then the node  value then move left otherwise move right
         }
