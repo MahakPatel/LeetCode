@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool possible(vector<int>& v, int day, int m, int k) {
+bool possible(vector<int>& v, int day, int m, int k) {
         int count = 0;
         int numsOfBouquet = 0;
         for (int i = 0; i < v.size(); i++) {
@@ -55,23 +55,4 @@ public:
 
     }
 
-    // +++++++++++++ Brute Force Approch +++++++++++++
-
-    // int minDays(vector<int>& bloomDay, int m, int k) {
-
-    //     int n = bloomDay.size();
-    //     int mini = INT_MAX, maxi = INT_MIN;
-    //     for (int i = 0; i < n; i++) {
-    //         // for binary search range
-    //         mini = min(mini, bloomDay[i]);
-    //         maxi = max(maxi, bloomDay[i]);
-    //     }
-    //     for (int i = mini; i <= maxi; i++) {
-    //         if (possible(bloomDay, i, m, k)) {
-    //             return i;
-    //         }
-    //     }
-
-    //     return -1;
-    // }
 };
