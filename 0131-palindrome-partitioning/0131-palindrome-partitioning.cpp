@@ -1,6 +1,6 @@
 class Solution {
 public:
-    // Helper function to check if a substring is a palindrome
+// Helper function to check if a substring is a palindrome
     bool isPalindrome(string s, int start, int end) {
         // Compare characters from both ends moving towards the center
         while (start <= end) {
