@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int numberOfSubarrays(vector<int>& nums, int k) {
+int numberOfSubarrays(vector<int>& nums, int k) {
          // If k is negative, return 0 as there can't be any valid subarrays
         if (k < 0)
             return 0;
