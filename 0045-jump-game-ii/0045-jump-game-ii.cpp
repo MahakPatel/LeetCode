@@ -24,24 +24,4 @@ public:
 
         return jumps;
     }
-// ++++++++++++++++++Recursive Code+++++++++++++++
-//     int recursion(vector<int>& nums, int index, vector<int>& memo) {
-//     if (index >= nums.size() - 1)
-//         return 0;
-    
-//     if (memo[index] != -1)
-//         return memo[index];
-
-//     int minJumps = INT_MAX;
-//     for (int i = 1; i <= nums[index] && index + i < nums.size(); i++) {
-//         int jumpsFromNextIndex = recursion(nums, index + i, memo);
-//         if (jumpsFromNextIndex != INT_MAX) { // Ensure we do not add to INT_MAX
-//             int currentJump = 1 + jumpsFromNextIndex;
-//             minJumps = min(minJumps, currentJump);
-//         }
-//     }
-
-//     memo[index] = minJumps;
-//     return memo[index];
-// }
 };
