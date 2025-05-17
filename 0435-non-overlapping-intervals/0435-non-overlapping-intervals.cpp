@@ -1,6 +1,6 @@
 class Solution {
 public:
-    // Static comparator function to compare intervals by their end times
+ // Static comparator function to compare intervals by their end times
     static bool comparator(const vector<int>& value1,
                            const vector<int>& value2) {
         return value1[1] < value2[1]; // Compare end times of the intervals
