@@ -29,37 +29,6 @@ public:
 
         odd -> next = evenHead; // connect last node of old to first nide(head of even LL)
 
-        return head;
-        // ++++++++++++++ Brute Force +++++++++++++++
-        // int arr[];
-
-        // ListNode* temp = head;
-
-        // while(temp != NULL && temp -> next != NULL){
-        //     arr.insert(temp -> val);
-        //     temp = temp->next->next;
-        // }
-
-        // if(temp) arr.insert(temp->val);
-
-        // temp = head -> next;
-
-        // while(temp != NULL && temp -> next != NULL){
-        //     arr.insert(temp -> val);
-        //     temp = temp->next->next;
-        // }
-
-        // if(temp) arr.insert(temp->val);
-
-        // i = 0;
-        // temp = head;
-
-        // while(temp != NULL){
-        //     temp -> val = arr[i];
-        //     i++;
-        //     temp = temp -> next;
-        // }
-
-        // return head;
+        return head; 
     }
 };
