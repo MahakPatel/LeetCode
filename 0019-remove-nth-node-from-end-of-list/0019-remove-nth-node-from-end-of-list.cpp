@@ -10,6 +10,9 @@
  */
 class Solution {
 public:
+    // ++++++++++++ Optimal Solution +++++++++++++
+    // TC O(n)
+    //SC O(1)
     ListNode* removeNthFromEnd(ListNode* head, int n) {
 
         ListNode* fast = head;
